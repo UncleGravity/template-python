@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Poetry
+.venv/
+dist/
+
+# IDEs
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
+*.log
+*.swp
+*.swo
+
+# Project-specific (customize as needed)
+# data/
+# output/
