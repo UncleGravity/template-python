@@ -1,11 +1,11 @@
-# Python Project Template with Poetry, Nix, and Pyright
+# Python Project Template with uv, Nix, with Pyright support
 
-This is a template for Python projects using Poetry for dependency management, Nix for reproducible development environments, and Pyright for static type checking.
+This is a template for Python projects using uv for dependency management, Nix for reproducible development environments. It create a local vent that Pyright will pickup automatically.
 
 ## Prerequisites
 
 - [Nix](https://nixos.org/download.html) with flakes enabled
-- [Poetry](https://python-poetry.org/docs/#installation) (optional, as it's provided by the Nix shell)
+- [uv](https://github.com/astral-sh/uv) (provided by the Nix shell)
 
 ## Getting Started
 
@@ -17,26 +17,29 @@ This is a template for Python projects using Poetry for dependency management, N
    cd your-repo-name
    ```
 
-3. Enter the Nix development shell:
+3. (Optional) Enter the Nix development shell:
    ```bash
    nix develop
    ```
 
-4. Install the project dependencies:
+4. (Optional) Install project dependencies:
    ```bash
-   poetry install
+   uv pip sync  # to use the lockfile
+   # or
+   uv pip sync requirements.txt  # for legacy dependencies
    ```
 
 5. Run the hello world script:
    ```bash
-   poetry run python main.py
+   # Will create .venv/, install dependencies, and generate lockfile if last step was skipped
+   uv run main.py 
    ```
 
 ## Adding Dependencies
 
 To add new dependencies to your project:
   ```bash
-  poetry add package-name
+  uv add package-name
   ```
 
 ## Using Pyright
@@ -49,4 +52,3 @@ Pyright is configured to use the local `.venv` directory. Most IDEs with Pyright
 2. Modify `main.py` to start building your project.
 3. Add your code files and update dependencies as needed.
 
-Happy coding!

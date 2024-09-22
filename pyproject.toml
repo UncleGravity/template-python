@@ -1,18 +1,7 @@
-[tool.poetry]
-name = "python-poetry-nix-template"
+[project]
+name = "example"
 version = "0.1.0"
-description = "A template for Python projects using Poetry, Nix, and Pyright"
-authors = ["Your Name <you@example.com>"]
+description = "Add your description here"
 readme = "README.md"
-package-mode = false
+requires-python = ">=3.10"
 
-[tool.poetry.dependencies]
-python = "^3.12"
-
-[tool.pyright]
-venvPath="./"
-venv=".venv"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
